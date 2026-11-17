@@ -34,30 +34,7 @@ No measured results are available. Once executed, `results/metrics.csv` records 
 ## Planned next work
 Verify label orientation and physics, include directional connectivity, blocked train/test split by morphology regimes, confidence intervals, compare scalar/tensor targets, document engineering trade-offs and runtime.
 
-## GitHub-ready walkthrough
-This repository includes `.github/workflows/ci.yml`, `tests/`, a reproducible toy smoke-test generator, charts generated on execution, and a scientific interpretation guide in `DISCUSSION.md`.
 
-```powershell
-python -m pytest -q
-python make_demo_data.py
-python run_experiment.py --data-dir demo_data --sample-size 100 --pore-is-white
-```
-**All demo targets are arbitrary algebraic numbers, NOT OpenFOAM/PDE outputs, and none of the demo images is actual Mendeley data.** Results in `results/` are ignored by Git. Run against verified external Mendeley archives later to create scientific results, and review phase meaning, tensor indexing and pairing before interpreting them.
-
-After a real dataset run, copy *validated* figures and tables to `docs/figures/` to commit them. See `DISCUSSION.md` for descriptions and failure modes. The experiment emits:
-- `results/example_microstructures.png` — sample image inputs
-- `results/mae_noise.png` — clean/noisy MAE comparison
-- `results/r2_noise.png` — clean/noisy R² comparison
-- `results/runtime.json` — measured wall-clock train+predict runtime per model
-- `results/metrics.csv` — raw per-model evaluations
-
-### Publish on GitHub
-Create a blank GitHub repository named `MicroTwin-Vision` without creating a remote README, then run:
-```powershell
-git init
-git add .
-git commit -m "Add physics-aware microstructure regression benchmarks and CI"
-git branch -M main
 git remote add origin https://github.com/YOUR-USERNAME/MicroTwin-Vision.git
 git push -u origin main
 ```
