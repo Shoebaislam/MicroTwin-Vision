@@ -6,19 +6,6 @@ Independent exploratory project for Fall 2027 doctoral applications. A lightweig
 ## Source and attribution
 Weber, R.; Korneev, S.; Battiato, I. (2022). *Labeled Image Dataset of Generated Porous Electrode Microstructures and Calculated Transport Parameters for Neural Network Training.* Mendeley Data, v1. DOI: [10.17632/mgmxv5tjt2.1](https://doi.org/10.17632/mgmxv5tjt2.1). CC BY 4.0. Source includes 100,000 synthetic binary 64×64 TIFF images and PDE-closure transport labels generated with OpenFOAM.
 
-## Quick start (Windows PowerShell)
-```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-```
-Download `images.zip` and `diffusion.zip` from https://data.mendeley.com/datasets/mgmxv5tjt2/1 into `data/` (dataset archives are **not** redistributed in this project).
-```powershell
-python inspect_dataset.py
-# Check the label layout, tensor component meaning, pore phase convention, and ID matching first.
-python run_experiment.py --sample-size 1000 --target-index 0 --pore-is-white
-# OR --pore-is-black, after inspecting the dataset's phase coding.
-```
 
 ## Model plan
 - **Geometry**: area fraction of chosen pore phase; largest connected fraction; binary spanning indicator; four-neighbor interface density. Phase convention must be validated first.
