@@ -33,9 +33,3 @@ No measured results are available. Once executed, `results/metrics.csv` records 
 
 ## Planned next work
 Verify label orientation and physics, include directional connectivity, blocked train/test split by morphology regimes, confidence intervals, compare scalar/tensor targets, document engineering trade-offs and runtime.
-
-
-git remote add origin https://github.com/YOUR-USERNAME/MicroTwin-Vision.git
-git push -u origin main
-```
-Replace `YOUR-USERNAME` with your account name.
